@@ -1,0 +1,31 @@
+@using BOL;
+@{
+    List<Student> slist = (List<Student>)ViewData["stud"];
+}
+<html>
+<table class="table">
+    <thead>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Contact</th>
+        <th scope="col">Edit/Delete</th>
+    </thead>
+    <tbody>
+        @foreach (Student iten in slist)
+        {
+            <tr>
+                <td>@iten.id</td>
+                <td>@iten.name</td>
+                <td>@iten.contact</td>
+                <td>
+                    <a href="./Edit/@iten.id">Edit</a> |
+                    <a href="./Delete/@iten.id">Delete</a>
+                <a href="./Details/@iten.id">Details</a></td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+<a href="./Insert">Insert</a>
+
+</html>

@@ -1,0 +1,8 @@
+@using BOL;
+@{
+    Student s = ViewData["Particular"] as Student;
+}
+
+<h1>Welcome @s.name</h1>
+<h2>Your ID is : @s.id</h2>
+<h2>Your Contact Details are : @s.contact</h2>
